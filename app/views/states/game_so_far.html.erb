@@ -1,0 +1,40 @@
+<h1>Game So Far</h1>
+<table>
+	<thead>
+	<tr>
+		<th>
+		  TimeStamp	
+		</th>
+		<th>
+		  Team1
+		</th>
+		<th>
+		  Team2
+		</th>
+	</tr>
+		
+	</thead>
+	<tbody>
+	<% if @time_stamps.size != 0 %>
+	  <% for i in 0..(@time_stamps.size-1) %>
+
+	    <tr>
+			<th>
+			  <%= @time_stamps[i] %>
+			</th>
+			<th>
+			  <%= @t1_scores[i] %>
+			</th>
+			<th>
+			  <%= @t2_scores[i] %>
+			</th>
+	    </tr>
+	    
+	  <% end %>
+	<% else %>
+	  
+	<% end %>
+		
+	</tbody>
+</table>
+<%= link_to("Play", states_play_path) %>

@@ -1,0 +1,24 @@
+<h1>Quidditch Game</h1>
+
+<% if !@last_state.nil? %>
+   <h2>Score</h2>
+   <div>Team1: <%= @last_state.score1 %></div>
+   <div>Team2: <%= @last_state.score2 %></div>
+<% end %>
+
+<%= form_for @state do |f| %>
+  <p>
+	  <%= f.label :snitch,"Snitch" %> 
+	  <%= f.select(:snitch, options_for_select(list_for_snitch, "Select Category")) %>
+  
+  	  <%= f.label :quaffle,"Quaffle" %>
+      <%= f.select(:quaffle, options_for_select(list_for_quaffle, "Select Category")) %>
+  	  <%= f.label :bludger,"Bludger" %>
+      <%= f.select(:bludger, options_for_select(list_of_players("all"), "Select Category")) %>
+  	  <%= f.label :reset,"Reset" %>
+      <%= f.select(:reset, options_for_select(list_of_players("all"), "Select Category")) %>
+  </p>
+  <%= f.submit "Submit State" %> 
+<% end %>
+
+<%= link_to("Game Status", states_game_so_far_path) %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  snitch: MyString
+  quaffle: MyString
+  reset: MyString
+  bludger: MyString
+
+two:
+  snitch: MyString
+  quaffle: MyString
+  reset: MyString
+  bludger: MyString
